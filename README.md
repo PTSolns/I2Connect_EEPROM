@@ -29,7 +29,7 @@ Each module is fully assembled and includes a preinstalled male header that is c
 The following modules are part of the *I2Connect* Series:
 
 * [**AHT20**](https://ptsolns.com/products/i2connect-aht20) — Temperature & Humidity
-* **VEML7700** — Light & Lux
+* [**VEML7700**](https://ptsolns.com/products/i2connect-veml7700) — Light & Lux
 * [**EEPROM**](https://ptsolns.com/products/i2connect-eeprom) — 2 Mbit Memory
 * **Buttons** — User Input via 4×4 Matrix of Buttons
 * **Digit Display** — Dual 7 Segment Display
