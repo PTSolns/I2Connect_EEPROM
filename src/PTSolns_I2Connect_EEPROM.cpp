@@ -13,15 +13,28 @@ PTSolns_I2Connect_EEPROM::PTSolns_I2Connect_EEPROM() {
 
 bool PTSolns_I2Connect_EEPROM::begin(TwoWire &wirePort, uint8_t i2cAddress, uint32_t i2cClock) {
     _wire = &wirePort;
-    _i2cAddress = i2cAddress ? 1 : 0;
+    setI2CAddress(i2cAddress); 
     _i2cClock = i2cClock;
     _wire->setClock(_i2cClock);
     return isConnected();
 }
 
 void PTSolns_I2Connect_EEPROM::setI2CAddress(uint8_t i2cAddress) {
-    _i2cAddress = i2cAddress ? 1 : 0;
+    
+    if (i2cAddress >= 0x54 && i2cAddress <= 0x57) {
+        _i2cAddress = 1;
+    } 
+    
+    else if (i2cAddress == 1) {
+        _i2cAddress = 1;
+    } 
+    
+    else {
+        _i2cAddress = 0;
+    }
 }
+
+
 
 void PTSolns_I2Connect_EEPROM::setI2CClock(uint32_t i2cClock) {
     _i2cClock = i2cClock;
